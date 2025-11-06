@@ -3,6 +3,14 @@ const result = document.getElementById('result');
 const sayp = document.getElementById('say');
 
 Match.onclick = () => {
+  const yourName = document.getElementById('yourname').value.trim();
+  const theirName = document.getElementById('theirname').value.trim();
+
+  if (!yourName || !theirName) {
+    alert('Please fill in both names!');
+    return;
+  }
+
   const loveScore = Math.floor(Math.random() * 100) + 1;
 
   function getMessage(score) {
